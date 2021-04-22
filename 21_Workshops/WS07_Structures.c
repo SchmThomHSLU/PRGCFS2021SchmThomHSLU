@@ -33,8 +33,21 @@ int main()
 	[4].firstname = "Natasha",		[4].lastname = "Romanoff",	[4].grades = {5.3, 5.2, 5.1, 5.7, 4.9, 5.9}
 	};
 
+	
 
-
+	
+	for ( int i = 0; i <= NUM_STUDENTS; i++ )
+	{
+	students[i].average = i;
+	}
+	
+	
+	
+	for (int s = 0; s <= (NUM_STUDENTS-1); s++ )
+	{
+	printf("%s %s hat einen Durchschnitt von %f\n",students[s].firstname, students[s].lastname, students[s].average);
+	
+	}
 return 0; 
 }
 
