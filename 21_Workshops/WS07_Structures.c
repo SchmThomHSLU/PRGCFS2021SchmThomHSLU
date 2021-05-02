@@ -16,8 +16,15 @@ struct Student {
 	};
 
 
-
-
+void ComputeGradeAverage(struct Student *students)
+	{
+	float TempAverage = 0;
+	for ( int k = 0; k <= NUM_Grades; k++)
+		{
+		TempAverage = TempAverage + students->grades[k];
+		}
+	students->average = TempAverage/NUM_Grades;
+	}
 
 
 
@@ -34,20 +41,21 @@ int main()
 	};
 
 	
-
 	
-	for ( int i = 0; i <= NUM_STUDENTS; i++ )
-	{
-	students[i].average = i;
-	}
-	
-	
+	float Classaverage = 0;
 	
 	for (int s = 0; s <= (NUM_STUDENTS-1); s++ )
 	{
-	printf("%s %s hat einen Durchschnitt von %f\n",students[s].firstname, students[s].lastname, students[s].average);
+	ComputeGradeAverage(&students[s]);
+	
+	Classaverage = Classaverage + students[s].average;
+	
+	printf("%s %s hat einen Durchschnitt von %.2f\n",students[s].firstname, students[s].lastname, students[s].average);
 	
 	}
+	Classaverage = Classaverage / NUM_STUDENTS;
+	
+	printf("Der Klassendurchschnitt beträgt %.2f.\n", Classaverage);
 return 0; 
 }
 
