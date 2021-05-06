@@ -8,8 +8,8 @@ int main ()
 {
 	float EingabeZahl =0.0;
 	char ShiftRichtung;
-	char linksShift = 76;
-	char rechtsShift = 82;
+	char linksShift = 'L';
+	char rechtsShift = 'R';
 	int Anzahlshift =0;
 	int Resultat = 0;
 
@@ -21,23 +21,28 @@ int main ()
 			
 			printf("Die Zahl ist %.2f.\n", EingabeZahl);
 			
-			printf("Gib für linksshift ein L und für rechtsshift ein R ein:\n");
+			printf("Gib für linksshift 'L' und für rechtsshift 'R' ein:\n");
 			scanf(" %c", &ShiftRichtung);
 			
-			printf("Gib die Anzahl Positionen an:\n");
-			scanf(" %d", &Anzahlshift);
+			
 			
 			if (ShiftRichtung == linksShift)
 			{
+			printf("Gib die Anzahl Positionen an:\n");
+			scanf(" %d", &Anzahlshift);
+			
 			Resultat = (int) EingabeZahl << Anzahlshift;
 			
-			printf("%f bitweise nach %d geschoben ergibt: %d.\n", EingabeZahl, ShiftRichtung, Resultat);
+			printf("%f bitweise nach %c geschoben ergibt: %d.\n", EingabeZahl, ShiftRichtung, Resultat);
 			}
 			else if (ShiftRichtung == rechtsShift)
 			{
+			printf("Gib die Anzahl Positionen an:\n");
+			scanf(" %d", &Anzahlshift);
+			
 			Resultat = (int) EingabeZahl >> Anzahlshift;
 			
-			printf("%f bitweise nach %d geschoben ergibt: %d.\n", EingabeZahl, ShiftRichtung, Resultat);
+			printf("%f bitweise nach %c geschoben ergibt: %d.\n", EingabeZahl, ShiftRichtung, Resultat);
 			}
 			else 
 			{
